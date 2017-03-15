@@ -39,7 +39,6 @@ void Player::updatePlayer(char matriz[][5], Input::Key k)
 	if (matriz[x][y] == '$') {
 		score = score + 1;
 	}
-
 }
 
 void Player::prueba(char array[][5])
