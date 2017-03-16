@@ -4,7 +4,6 @@
 #include <sstream>
 
 Map::Map(int difficulty) :
-	difficulty(difficulty),
 	rows(5 * difficulty + rand() % 11),
 	columns(rows)
 {
@@ -26,17 +25,17 @@ Map::~Map(void)
 }
 
 //Cell modifier method
-void Map::cellUpdate(int i, int j, char c)
+void Map::updateCell(int i, int j, char c)
 {
 	md[i][j] = c;
 }
 
-int Map::size()
+int Map::getSize()
 {
 	return rows;
 }
 
-char Map::cell(int i, int j)
+char Map::getCell(int i, int j)
 {
 	return md[i][j];
 }
@@ -44,9 +43,9 @@ char Map::cell(int i, int j)
 std::ostream & operator<<(std::ostream & out, Map x)
 {
 	// TODO: insert return statement here
-	for (int i = 0; i < x.size(); i++) {
-		for (int j = 0; j < x.size(); j++) {
-			out << x.cell(i, j) << " ";
+	for (int i = 0; i < x.getSize(); i++) {
+		for (int j = 0; j < x.getSize(); j++) {
+			out << x.getCell(i, j) << " ";
 		}
 		out << std::endl;
 	}
