@@ -9,12 +9,21 @@ Map::Map(int difficulty) :
 {
 	md = new char*[rows];
 	for (int i = 0; i < rows; i++)
-		md[i] = new char[columns];
+
+		int Map::getSize()
+	{
+		return 0;
+	}
+	md[i] = new char[columns];
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < columns; j++) {
 			md[i][j] = '.';
 		}
 	}
+}
+
+Map::Map(int difficulty)
+{
 }
 
 Map::~Map(void)

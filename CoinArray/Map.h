@@ -4,21 +4,13 @@
 class Map
 {
 public:
-	//constructors
-	Map(int difficulty);
-
-	//destructor
-	~Map(void);
-
-	//Cell modifier method
-	void updateCell(int i, int j, char c);
-
-	//output stream operator overload
-	friend std::ostream& operator<< (std::ostream &out, Map x);
-
-	//Atribute retrieving methods
-	int getSize();
-	char getCell(int i, int j);
+	
+	Map(int difficulty);														//Constructor
+	~Map(void);																	//Destructor
+	friend std::ostream& operator<< (std::ostream &out, Map x);					//output stream operator overload
+	void updateCell(int i, int j, char c);										//Setter de celda
+	int getSize();																//Getter de size
+	char getCell(int i, int j);													//Getter de celda
 
 private:
 

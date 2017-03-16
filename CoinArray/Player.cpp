@@ -1,6 +1,5 @@
 #include "Player.h"
 #include <iostream>
-#include "Map.h"
 
 
 Player::Player(int mapSize) :
@@ -15,11 +14,12 @@ Player::~Player()
 {
 }
 
-void Player::updatePlayer(char matriz[][5], Input::Key k)
+void Player::updatePlayer(Map m, Input::Key k)
 {
 	int prev_x = x;
 	int prev_y = y;
 
+	//Miramos desde el Input
 	switch (k) {
 	case Input::Key::W:
 		y = y - 1;
@@ -35,20 +35,35 @@ void Player::updatePlayer(char matriz[][5], Input::Key k)
 		break;
 	}
 
-	//Modificamos la posicion del jugador
-	matriz[prev_x][prev_y]='.';
-	matriz[x][y] = '@';
-
-	Map::getCell();
-
-	//Comprobamos si ha recogido una moneda
-	if (matriz[x][y] == '$') {
+	//Updateamos el score del player
+	if (m.getCell(x, y) == '$')
+	{
 		score = score + 1;
 	}
+
+	//Updateamos la posicion del player
+	m.updateCell(prev_x, prev_y, '.');
+	m.updateCell(x, y, '@');
+
 }
 
-void Player::prueba(char array[][5])
+/*void Player::prueba(char array[][5])
 {
 	array[1][3] = 'x';
 	std::cout << array[1][3];
+}*/
+
+int Player::getScore()
+{
+	return score;
+}
+
+int Player::getX()
+{
+	return x;
+}
+
+int Player::getY()
+{
+	return y;
 }
