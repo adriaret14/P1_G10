@@ -1,5 +1,6 @@
 #include "Player.h"
 #include <iostream>
+#include "Map.h"
 
 
 Player::Player()
@@ -34,6 +35,8 @@ void Player::updatePlayer(char matriz[][5], Input::Key k)
 	//Modificamos la posicion del jugador
 	matriz[prev_x][prev_y]='.';
 	matriz[x][y] = '@';
+
+	Map::getCell();
 
 	//Comprobamos si ha recogido una moneda
 	if (matriz[x][y] == '$') {
