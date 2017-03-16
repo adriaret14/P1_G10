@@ -3,12 +3,10 @@
 class CoinManager
 {
 public:
-	//Constructor
-	CoinManager(Map map);
-	//Destructor
-	~CoinManager();
-	//coin update method
-	void updateCoins(Map map);
+	CoinManager(Map map);							//Constructor
+	~CoinManager();									//Destructor
+	void updateCoins(Map map);						//coin update method
+	void CoinManager::createCoins(Map map);			//coin creation method
 private:
 	int coins;
 };
