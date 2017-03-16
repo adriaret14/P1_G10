@@ -2,7 +2,10 @@
 #include <iostream>
 
 
-Player::Player()
+Player::Player(int mapSize) :
+	x(rand()%mapSize),
+	y(rand()%mapSize),
+	score(0)
 {
 }
 
