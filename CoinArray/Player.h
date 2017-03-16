@@ -1,4 +1,5 @@
 #pragma once
+
 #include "Input.h";
 #include "Map.h"
 #include "CoinManager.h"
@@ -7,7 +8,7 @@
 class Player
 {
 public:
-	Player(int mapSize);
+	Player(Map m);
 	~Player();
 	void updatePlayer(CoinManager c, Map m, Input::Key k);		//A esta función se le pasan como parametros un puntero a la matriz y la tecla pulsada
 	/*void prueba(char array[][5]);*/							//Método de prueba de matrices dinamicas y paso y acceso de matrices por funciones

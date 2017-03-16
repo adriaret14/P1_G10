@@ -9,21 +9,12 @@ Map::Map(int difficulty) :
 {
 	md = new char*[rows];
 	for (int i = 0; i < rows; i++)
-
-		int Map::getSize()
-	{
-		return 0;
-	}
-	md[i] = new char[columns];
+		md[i] = new char[columns];
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < columns; j++) {
 			md[i][j] = '.';
 		}
 	}
-}
-
-Map::Map(int difficulty)
-{
 }
 
 Map::~Map(void)
@@ -34,7 +25,7 @@ Map::~Map(void)
 }
 
 //Cell modifier method
-void Map::updateCell(int i, int j, char c)
+void Map::updateCell(int j, int i, char c)
 {
 	md[i][j] = c;
 }
@@ -44,7 +35,7 @@ int Map::getSize()
 	return rows;
 }
 
-char Map::getCell(int i, int j)
+char Map::getCell(int j, int i)
 {
 	return md[i][j];
 }

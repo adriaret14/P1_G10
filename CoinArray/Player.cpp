@@ -2,9 +2,9 @@
 #include <iostream>
 
 
-Player::Player(int mapSize) :
-	x(rand()%mapSize),
-	y(rand()%mapSize),
+Player::Player(Map m) :
+	x(rand()%m.getSize()),
+	y(rand()%m.getSize()),
 	score(0)
 {
 }
