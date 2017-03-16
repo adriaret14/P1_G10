@@ -14,7 +14,7 @@ Player::~Player()
 {
 }
 
-void Player::updatePlayer(Map m, Input::Key k)
+void Player::updatePlayer(CoinManager c, Map m, Input::Key k)
 {
 	int prev_x = x;
 	int prev_y = y;
@@ -38,7 +38,8 @@ void Player::updatePlayer(Map m, Input::Key k)
 	//Updateamos el score del player
 	if (m.getCell(x, y) == '$')
 	{
-		score = score + 1;
+		score++;
+		c.updateCoins(m);
 	}
 
 	//Updateamos la posicion del player
