@@ -17,6 +17,8 @@ Map::Map(int difficulty) :
 	}
 }
 
+
+
 Map::~Map(void)
 {
 	for (int i = 0; i < rows; i++)

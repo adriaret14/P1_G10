@@ -7,25 +7,29 @@
 
 
 void main() {
-	srand(static_cast<unsigned int>(time(nullptr)));
-	/*
 	char array[3][5]{{'h', 'a', 'l', 'o', '\0'},{ 'h', 'o', 'l', 'a', '\0' },{ 'h', 'o', 'l', 'a', '\0' } };
 	Player p1;
-	p1.prueba(array);
-	*/
-	int difficulty = 1;
-	std::cout << "Escoge la dificultad del juego (1, 2 o 3): " << std::endl;
-	do {
-		if (difficulty > 3 || difficulty < 1)
-		{
-			system("cls");
-			std::cout << "Dificultad fuera del rango. Escoge de nuevo: " << std::endl;
-		}
-		std::cin >> difficulty;
-	} while (difficulty > 3 || difficulty < 1);
+	p1.prueba(array);*/
 
-	Map m(difficulty);
-	Player p(m);
-	m.updateCell(p.getX(), p.getY(), '@');
+	srand(static_cast<unsigned int>(time(nullptr)));
+	int dificultad;
+
+
+	//Pedimos la dificultad del juego
+	do{
+		system("cls");
+		std::cout << "Escoge una dificultad de juego:\n\t-FACIL(1)\n\t-MEDIO(2)\n\t-DIFICIL(3)\n";
+		std::cin >> dificultad;
+
+	} while (dificultad < 1 || dificultad>3);
+
+	//Creamos el mapa
+	Map m(dificultad);
+	//m.updateCell(4, 2, '@');
+	//Creamos al jugador
 	std::cout << m;
+
+	Player p(m);
+	std::cout <<p.getX() << "\t" << p.getY();
+	
 }

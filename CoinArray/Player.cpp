@@ -7,6 +7,7 @@ Player::Player(Map m) :
 	y(rand()%m.getSize()),
 	score(0)
 {
+	m.updateCell(x,y,'@');
 }
 
 
