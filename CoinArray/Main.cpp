@@ -25,9 +25,8 @@ void main() {
 	Map m(dificultad);
 	//Creamos el coin manager
 	CoinManager c(m);
-		//Creamos al jugador
+	//Creamos al jugador
 	Player p(m, c);
-	std::cout << m;
 
 
 	//m.updateCell(3, 1, '#');

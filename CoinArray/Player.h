@@ -8,7 +8,6 @@ class Player
 {
 public:
 	Player(Map &m, CoinManager &c);
-	~Player();
 	void updatePlayer(Input::Key k);		//A esta función se le pasan como parametros un puntero a la matriz y la tecla pulsada
 	/*void prueba(char array[][5]);*/							//Método de prueba de matrices dinamicas y paso y acceso de matrices por funciones
 	int getScore();												//Getter de score

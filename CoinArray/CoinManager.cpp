@@ -22,12 +22,12 @@ void CoinManager::updateCoins()
 
 void CoinManager::createCoins()
 {
-	coins = (m.getSize()*m.getSize()) / 100 * 3 + rand() % (m.getSize()*m.getSize() / 10);
+	coins = (m.getRows()*m.getCols()) / 100 * 3 + rand() % (m.getRows()*m.getCols() / 10);
 	int count = 0;
 	while (count <= coins)
 	{
-		int x = rand() % m.getSize();
-		int y = rand() % m.getSize();
+		int x = rand() % m.getRows();
+		int y = rand() % m.getCols();
 
 		if (m.getCell(x, y) == '.')
 		{
