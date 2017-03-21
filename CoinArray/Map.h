@@ -4,7 +4,6 @@
 class Map
 {
 public:
-	
 	Map(int difficulty);														//Constructor
 	~Map(void);																	//Destructor
 	friend std::ostream& operator<< (std::ostream &out, Map x);					//output stream operator overload
@@ -15,7 +14,6 @@ public:
 private:
 
 	char **md;
-	int rows;
-	int columns;
+	int size;
 
 };
