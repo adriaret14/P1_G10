@@ -27,9 +27,10 @@ void main() {
 	Map m(dificultad);
 	//m.updateCell(4, 2, '@');
 	//Creamos al jugador
-	std::cout << m;
+	
 
 	Player p(m);
 	std::cout <<p.getX() << "\t" << p.getY();
+	std::cout << m;
 	
 }
