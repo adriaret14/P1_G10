@@ -29,7 +29,7 @@ void main() {
 	//Creamos al jugador
 	std::cout << m;
 
-	Player p(m);
-	std::cout <<p.getX() << "\t" << p.getY();
+	//Player p(m);
+	//std::cout <<p.getX() << "\t" << p.getY();
 	
 }

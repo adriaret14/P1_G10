@@ -1,5 +1,5 @@
 #pragma once
-#include "Input.h";
+#include "Input.h"
 #include "Map.h"
 #include "CoinManager.h"
 
