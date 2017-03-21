@@ -2,9 +2,11 @@
 #include <iostream>
 
 
-Player::Player(Map m) :
-	x(rand()%m.getSize()),
-	y(rand()%m.getSize()),
+Player::Player(Map &map, CoinManager &coin) :
+	m(map),
+	c(coin),
+	x(rand() % m.getSize()),
+	y(rand() % m.getSize()),
 	score(0)
 {
 	m.updateCell(x,y,'@');
@@ -15,7 +17,7 @@ Player::~Player()
 {
 }
 
-void Player::updatePlayer(CoinManager c, Map m, Input::Key k)
+void Player::updatePlayer(Input::Key k)
 {
 	int prev_x = x;
 	int prev_y = y;
@@ -40,7 +42,7 @@ void Player::updatePlayer(CoinManager c, Map m, Input::Key k)
 	if (m.getCell(x, y) == '$')
 	{
 		score++;
-		c.updateCoins(m);
+		c.updateCoins();
 	}
 
 	//Updateamos la posicion del player

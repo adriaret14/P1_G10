@@ -7,13 +7,8 @@
 
 
 void main() {
-	/*char array[3][5]{{'h', 'a', 'l', 'o', '\0'},{ 'h', 'o', 'l', 'a', '\0' },{ 'h', 'o', 'l', 'a', '\0' } };
-	Player p1;
-	p1.prueba(array);*/
-
 	srand(static_cast<unsigned int>(time(nullptr)));
 	int dificultad;
-
 
 	//Pedimos la dificultad del juego
 	do{
@@ -22,11 +17,13 @@ void main() {
 		std::cin >> dificultad;
 
 	} while (dificultad < 1 || dificultad>3);
-
+	system("cls");
 	//Creamos el mapa
 	Map m(dificultad);
-	//m.updateCell(4, 2, '@');
-	//Creamos al jugador
+	//Creamos el coin manager
+	CoinManager c(m);
+		//Creamos al jugador
+	Player p(m, c);
 	std::cout << m;
 
 	//Player p(m);
