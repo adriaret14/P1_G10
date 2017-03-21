@@ -3,11 +3,12 @@
 class CoinManager
 {
 public:
-	CoinManager(Map map);							//Constructor
+	CoinManager(Map &map);							//Constructor
 	~CoinManager();									//Destructor
-	void updateCoins(Map map);						//coin update method
-	void createCoins(Map map);			//coin creation method
+	void updateCoins();						//coin update method
+	void createCoins();			//coin creation method
 private:
 	int coins;
+	Map &m;
 };
 
