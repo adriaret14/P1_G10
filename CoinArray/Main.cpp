@@ -18,6 +18,9 @@ void main() {
 
 	} while (dificultad < 1 || dificultad>3);
 	system("cls");
+
+	int nMonedas = 30 * dificultad + rand() % 30;
+
 	//Creamos el mapa
 	Map m(dificultad);
 	//Creamos el coin manager
@@ -26,7 +29,16 @@ void main() {
 	Player p(m, c);
 	std::cout << m;
 
+
+	//m.updateCell(3, 1, '#');
+
 	//Player p(m);
 	//std::cout <<p.getX() << "\t" << p.getY();
+
+	do {
+
+
+
+	} while ((nMonedas > 0) || Input::getKey() != Input::Key::ESC);
 	
 }
