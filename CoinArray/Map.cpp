@@ -1,7 +1,5 @@
 #include "map.h"
 #include <iostream>
-#include <fstream>
-#include <sstream>
 
 Map::Map(int difficulty) :
 	size(5 * difficulty + rand() % 11)
