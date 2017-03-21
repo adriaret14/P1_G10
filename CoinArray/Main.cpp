@@ -25,4 +25,6 @@ void main() {
 	CoinManager c(m);
 	//Creamos al jugador
 	Player p(m, c);
+
+	std::cout << m;
 }

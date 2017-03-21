@@ -9,14 +9,9 @@ Player::Player(Map &map, CoinManager &coin) :
 	y(0),
 	score(0)
 {
-	x = (rand() % m.getSize());
-	y = (rand() % m.getSize());
+	x = (rand() % m.getRows());
+	y = (rand() % m.getCols());
 	m.updateCell(x,y,'@');
-}
-
-
-Player::~Player()
-{
 }
 
 void Player::updatePlayer(Input::Key k)
@@ -37,12 +32,12 @@ void Player::updatePlayer(Input::Key k)
 		}
 		break;
 	case Input::Key::S:
-		if (y < m.getSize() - 1) {
+		if (y < m.getCols() - 1) {
 			y = y + 1;
 		}
 		break;
 	case Input::Key::D:
-		if (x < m.getSize() - 1) {
+		if (x < m.getRows() - 1) {
 			x = x + 1;
 		}
 		break;
