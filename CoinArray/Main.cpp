@@ -18,11 +18,11 @@ void main() {
 
 	} while (dificultad < 1 || dificultad>3);
 	system("cls");
+
 	//Creamos el mapa
 	Map m(dificultad);
 	//Creamos el coin manager
 	CoinManager c(m);
-		//Creamos al jugador
+	//Creamos al jugador
 	Player p(m, c);
-	std::cout << m;
 }

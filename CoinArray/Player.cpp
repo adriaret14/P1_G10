@@ -5,10 +5,10 @@
 Player::Player(Map &map, CoinManager &coin) :
 	m(map),
 	c(coin),
-	x(rand() % m.getSize()),
-	y(rand() % m.getSize()),
 	score(0)
 {
+	x = (rand() % m.getSize());
+	y = (rand() % m.getSize());
 	m.updateCell(x,y,'@');
 }
 
