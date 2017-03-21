@@ -20,7 +20,9 @@ void main() {
 	system("cls");
 	//Creamos el mapa
 	Map m(dificultad);
-	m.updateCell(4, 2, '@');
-	//Creamos al jugador
+	//Creamos el coin manager
+	CoinManager c(m);
+		//Creamos al jugador
+	Player p(m, c);
 	std::cout << m;
 }

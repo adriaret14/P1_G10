@@ -42,7 +42,7 @@ void Player::updatePlayer(Input::Key k)
 	if (m.getCell(x, y) == '$')
 	{
 		score++;
-		c.updateCoins(m);
+		c.updateCoins();
 	}
 
 	//Updateamos la posicion del player
