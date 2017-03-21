@@ -27,24 +27,16 @@ void Player::updatePlayer(Input::Key k)
 	//Miramos desde el Input
 	switch (k) {
 	case Input::Key::W:
-		if (y > 0) {
-			y = y - 1;
-		}
+		y = y - 1;
 		break;
 	case Input::Key::A:
-		if (x > 0) {
-			x = x - 1;
-		}
+		x = x - 1;
 		break;
 	case Input::Key::S:
-		if (y < m.getSize() - 1) {
-			y = y + 1;
-		}
+		y = y + 1;
 		break;
 	case Input::Key::D:
-		if (x < m.getSize() - 1) {
-			x = x + 1;
-		}
+		x = x + 1;
 		break;
 	}
 
