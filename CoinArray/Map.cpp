@@ -8,9 +8,8 @@ Map::Map(int difficulty) :
 	rows = (5 * difficulty + rand() % 5);
 	cols = (5 * difficulty + rand() % 5);
 	md = new char*[rows];
-	for (int i = 0; i < rows; i++)
+	for (int i = 0; i < rows; i++){
 		md[i] = new char[cols];
-	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < cols; j++) {
 			md[i][j] = '.';
 		}
