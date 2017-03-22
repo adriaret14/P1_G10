@@ -1,8 +1,9 @@
 #include "CoinManager.h"
 
-CoinManager::CoinManager(Map map)
+CoinManager::CoinManager(Map &map) :
+	m(map)
 {
-	createCoins(map);
+	createCoins();
 }
 
 CoinManager::~CoinManager()
@@ -10,27 +11,27 @@ CoinManager::~CoinManager()
 	delete &coins;
 }
 
-void CoinManager::updateCoins(Map map)
+void CoinManager::updateCoins()
 {
 	coins--;
 	if (coins == 0)
 	{
-		createCoins(map);
+		createCoins();
 	}
 }
 
-void CoinManager::createCoins(Map map)
+void CoinManager::createCoins()
 {
-	coins = (map.getSize()*map.getSize()) / 100 * 3 + rand() % (map.getSize()*map.getSize() / 10);
+	coins = (m.getRows()*m.getCols()) / 100 * 3 + rand() % (m.getRows()*m.getCols() / 10);
 	int count = 0;
 	while (count <= coins)
 	{
-		int x = rand() % map.getSize();
-		int y = rand() % map.getSize();
+		int x = rand() % m.getRows();
+		int y = rand() % m.getCols();
 
-		if (map.getCell(x, y) == '.')
+		if (m.getCell(x, y) == '.')
 		{
-			map.updateCell(x, y, '$');
+			m.updateCell(x, y, '$');
 			count++;
 		}
 	}
