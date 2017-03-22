@@ -41,8 +41,11 @@ void Player::updatePlayer(Input::Key k)
 			x = x + 1;
 		}
 		break;
+	case Input::Key::NONE:
+		
+		break;
 	}
-
+	
 	//Updateamos el score del player
 	if (m.getCell(x, y) == '$')
 	{

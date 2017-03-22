@@ -26,8 +26,8 @@ void CoinManager::createCoins()
 	int count = 0;
 	while (count <= coins)
 	{
-		int x = rand() % m.getRows();
-		int y = rand() % m.getCols();
+		int x = rand() % m.getCols();
+		int y = rand() % m.getRows();
 
 		if (m.getCell(x, y) == '.')
 		{
