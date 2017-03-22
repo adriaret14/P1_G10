@@ -27,7 +27,7 @@ Map::~Map(void)
 //Cell modifier method
 void Map::updateCell(int i, int j, char c)
 {
-	md[i][j] = c;
+	md[j][i] = c;
 }
 
 int Map::getRows()
@@ -42,7 +42,7 @@ int Map::getCols()
 
 char Map::getCell(int i, int j)
 {
-	return md[i][j];
+	return md[j][i];
 }
 
 std::ostream & operator<<(std::ostream & out, Map x)
@@ -50,7 +50,7 @@ std::ostream & operator<<(std::ostream & out, Map x)
 	// TODO: insert return statement here
 	for (int i = 0; i < x.getRows(); i++) {
 		for (int j = 0; j < x.getCols(); j++) {
-			out << x.getCell(i, j) << " ";
+			out << x.getCell(j, i) << " ";
 		}
 		out << std::endl;
 	}
