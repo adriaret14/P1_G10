@@ -9,19 +9,19 @@ Map::Map(int difficulty) :
 	cols = (5 * difficulty + rand() % 5);
 	md = new char*[rows];
 	for (int i = 0; i < rows; i++){
-		md[i] = new char[cols];
-		for (int j = 0; j < cols; j++) {
-			md[i][j] = '.';
+		md[i] = new char[cols+1];
+		for (int j = 0; j < cols +1; j++) {
+			md[i][j] = i<cols+1?'.':'\0';
 		}
 	}
 }
 
-Map::~Map(void)
-{
-	for (int i = 0; i < rows; i++)
-		delete md[i];
-	delete[] md;
-}
+//Map::~Map(void)
+//{
+//	for (int i = 0; i < rows; i++)
+//		delete md[i];
+//	delete[] md;
+//}
 
 //Cell modifier method
 void Map::updateCell(int i, int j, char c)

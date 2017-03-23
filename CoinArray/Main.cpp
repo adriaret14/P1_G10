@@ -32,8 +32,6 @@ void main() {
 	//std::cout << m;
 	//std::cout << m.getCell(p.getX(), p.getY());
 	std::cout << m;
-	std::cout << m.getCell(5, 5);
-	//std::cout << m.getCell(p.getX(), p.getY());
 	p.updatePlayer(Input::Key::W);
 	//std::cout << m;
 	/*do {
@@ -44,6 +42,6 @@ void main() {
 		
 	} while ((Input::getKey() != Input::Key::ESC)  || (nMonedas - p.getScore() <= 0));*/
 	
-	system("cls");
-	std::cout << "Fin de la partida";
+	//system("cls");
+	//std::cout << "Fin de la partida";
 }
