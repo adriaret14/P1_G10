@@ -33,11 +33,3 @@ void main() {
 
 	//Player p(m);
 	//std::cout <<p.getX() << "\t" << p.getY();
-
-	do {
-
-
-
-	} while ((nMonedas > 0) || Input::getKey() != Input::Key::ESC);
-	
-}
