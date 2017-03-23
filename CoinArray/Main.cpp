@@ -26,13 +26,15 @@ void main() {
 	//Creamos el mapa
 	Map m(dificultad);
 	//Creamos el coin manager
-	//CoinManager c(m);
+	CoinManager c(m);
 	//Creamos al jugador
-	//Player p(m, c);
+	Player p(m, c);
 	//std::cout << m;
 	//std::cout << m.getCell(p.getX(), p.getY());
 	std::cout << m;
-	//p.updatePlayer(Input::Key::W);
+	std::cout << m.getCell(5, 5);
+	//std::cout << m.getCell(p.getX(), p.getY());
+	p.updatePlayer(Input::Key::W);
 	//std::cout << m;
 	/*do {
 		//system("cls");
