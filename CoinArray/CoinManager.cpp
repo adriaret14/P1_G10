@@ -8,13 +8,12 @@ CoinManager::CoinManager(Map &map) :
 
 CoinManager::~CoinManager()
 {
-	delete &coins;
 }
 
 void CoinManager::updateCoins()
 {
 	coins--;
-	if (coins == 0)
+	if (coins <= 0)
 	{
 		createCoins();
 	}
@@ -22,9 +21,11 @@ void CoinManager::updateCoins()
 
 void CoinManager::createCoins()
 {
-	coins = (m.getRows()*m.getCols()) / 100 * 3 + rand() % (m.getRows()*m.getCols() / 10);
+	do {
+		coins = static_cast<int>((static_cast<float>(m.getRows())*static_cast<float>(m.getCols())) / 100 * 3 + rand() % static_cast<int>(static_cast<float>(m.getRows())*static_cast<float>(m.getCols()) / 10));
+	} while (coins == 0);
 	int count = 0;
-	while (count <= coins)
+	while (count < coins)
 	{
 		int x = rand() % m.getCols();
 		int y = rand() % m.getRows();
@@ -35,4 +36,8 @@ void CoinManager::createCoins()
 			count++;
 		}
 	}
+}
+
+int CoinManager::getCoins() {
+	return coins;
 }

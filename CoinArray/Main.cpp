@@ -31,17 +31,22 @@ void main() {
 	Player p(m, c);
 	//std::cout << m;
 	//std::cout << m.getCell(p.getX(), p.getY());
-	std::cout << m;
-	p.updatePlayer(Input::Key::W);
 	//std::cout << m;
-	/*do {
-		//system("cls");
-		//p.updatePlayer(Input::getKey());
-		
-
-		
-	} while ((Input::getKey() != Input::Key::ESC)  || (nMonedas - p.getScore() <= 0));*/
-	
+	//p.updatePlayer(Input::Key::W);
 	//system("cls");
-	//std::cout << "Fin de la partida";
+	std::cout << m << std::endl << "BB HEADSHOTS: " << p.getScore() << "/" << nMonedas;
+	//std::cout << m;
+	Input::Key input;
+	do {
+		input = Input::getKey();
+		if (input != Input::Key::NONE) {
+			p.updatePlayer(input);
+			system("cls");
+			std::cout << m << std::endl << "BB HEADSHOTS: " << p.getScore() << "/" << nMonedas ;
+		}
+	} while ((input != Input::Key::ESC) && (p.getScore() < nMonedas));
+	
+	//m.~Map();
+	system("cls");
+	std::cout << "Fin de la partida";
 }

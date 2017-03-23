@@ -32,12 +32,12 @@ void Player::updatePlayer(Input::Key k)
 		}
 		break;
 	case Input::Key::S:
-		if (y < m.getCols() - 1) {
+		if (y < m.getRows() - 1) {
 			y = y + 1;
 		}
 		break;
 	case Input::Key::D:
-		if (x < m.getRows() - 1) {
+		if (x < m.getCols() - 1) {
 			x = x + 1;
 		}
 		break;
